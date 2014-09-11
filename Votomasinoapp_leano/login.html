@@ -1,0 +1,124 @@
+<html>
+    <head>
+	<div id="menu">
+				<ul>
+					<li><a href="index.html" accesskey="1" title="">"ADMIN USER"</a></li>
+					
+				</ul>
+			</div>
+        <script>
+            var interval;
+            var interval2;
+            var left1=-400;
+            var btn;
+            
+                function mkFunction()
+               {   btn=document.getElementById("value");
+                  
+                  if(btn.value=="Login Here")
+                         {
+                               clearInterval(interval2); 
+                               btn.value="Close";
+                              interval=setInterval(DivOut,1);   
+                         }
+                   
+                   else
+                        {                       
+                             
+                             clearInterval(interval);
+                             btn.value="Login Here";
+                             interval2=setInterval(DivIn,1);
+                       }
+
+                      
+                      
+               function DivOut()
+               {
+                var div=document.getElementById("mk");
+               
+                left1+=3;
+                div.style.left=left1+"px";
+                if(left1>=2)
+                    clearInterval(interval);
+               
+               }
+               function DivIn()
+               {
+                var div=document.getElementById("mk");
+               
+                left1-=3;
+                div.style.left=left1+"px";
+                if(left1<=-400)
+                    clearInterval(interval2);
+               
+               }
+               }
+        </script>
+            
+       <style>
+           body{
+            background-color: black;
+        }
+       
+           
+           
+           #mk{
+               width:400px;
+               height:150px;
+               background-color:#333333;
+               border-radius: 5px;
+              color: white;
+               position: absolute;
+               left: -400px;
+               
+           }
+           #form{
+               
+               
+               width: 300px;
+               height: 100px;
+               margin: 0 auto;
+               margin-top: 23px;
+           }
+           #form input{
+               width: 200px;
+               border: 1px solid  cadetblue;
+               border-radius: 4px;
+           }
+           #button input{
+               width: 80px;
+               background-color: #ccccff;
+               font-weight: bold;
+               border: 1px solid #6699ff;
+               color: #6699ff;
+               margin-left: 190px;
+               margin-top: 10px;
+           }
+       </style>
+    </head>
+    
+    <body>
+        
+        <div id="in"><input id="value" type="button" onclick="mkFunction()" value="Login Here"/></div>
+        
+        
+        <div id="mk">
+            <div id="form"> <form>
+                Username: <input type="text"/><br>
+                Password : <input type="password"/>
+                <div id="button"><input type="button" id="button" onclick="mkFunction()" value="login"/>
+				
+				</div>
+				
+                <h5>if you are not a member ! <a rel="nofollow" href="http://eleap.ust.edu.ph">signup on eleap</a></h5>
+            </form>
+           </div>
+            
+        </div>
+
+      
+        
+    </body>
+    
+</html>
+  
